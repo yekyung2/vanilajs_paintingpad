@@ -1,17 +1,21 @@
 @import "reset.css";
 body{
-    background-color: #f6f9fc;
+    /* background: linear-gradient(to right, #fbcac9, #8ca6ce); */
+    background: linear-gradient(to bottom right, #fcafaf, #8f91ee);
+    /* background-color: #f6f9fc; */
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 50px;
     padding: 50px;
     font-family:Permanent Marker;
+    padding-bottom: 100px;
 }
 h1{
     font-size: x-large;
     margin-bottom: 20px;
-    color: rgb(10, 10, 10);
+    color:black;
+    text-align: center;
 }
 
 .canvas{
