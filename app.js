@@ -24,6 +24,7 @@ function onMouseMove(event){
         ctx.moveTo(x,y);
     }else{
         ctx.lintTo(x,y);
+        ctx.stroke();
     }
 }}
 
