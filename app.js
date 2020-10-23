@@ -1,5 +1,6 @@
 const canvas = document.getElementById("jsCanvas");
 const ctx = canvas.getContext("2d");
+const colors = document.getElementsByClassName("jsColor");
 
 canvas.height = 700;
 canvas.width = 700;
@@ -35,7 +36,10 @@ function onMouseDown(event){
    painting = true;
 }
 
-
+function handleColorClick(event){
+    const color = event.target.style.backgroundColor;
+    ctx.strokeStyle  = color;
+}
 
 
 //특정 이벤트가 발생했을 시 특정 함수를 실행할 수 있게 해주는 addEventListener 
@@ -46,6 +50,10 @@ if (canvas){
     canvas.addEventListener("mouseup", stopPainting);
     canvas.addEventListener("mouseleave", stopPainting);
 }
+
+Array.from(colors).forEach(color => 
+    color.addEventListener("click", handleColorClick)
+    );
 
 
 //Canvas는 html 태그인데, 다른 태그와 다른점은 "context"를 갖는다는 점이다. 
