@@ -71,6 +71,10 @@ function handleCanvasClick(){
     }
 }
 
+function handleCM(event){
+    event.preventDefault()
+}
+
 //특정 이벤트가 발생했을 시 특정 함수를 실행할 수 있게 해주는 addEventListener 
 // 적용할변수.addEventListner(addeventListner가 가지고 있는 이벤트 이름, 내가 지정한 함수이름)
 if (canvas){
@@ -79,6 +83,7 @@ if (canvas){
     canvas.addEventListener("mouseup", stopPainting);
     canvas.addEventListener("mouseleave", stopPainting);
     canvas.addEventListener("click", handleCanvasClick);
+    canvas.addEventListener("contextmenu", handleCM);
 }
 
 Array.from(colors).forEach(color => 
