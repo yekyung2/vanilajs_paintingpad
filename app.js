@@ -5,6 +5,7 @@ const range = document.getElementById("jsRange")
 const mode = document.getElementById("jsMode");
 const INITIAL_COLOR = "black";
 const CANVAS_SIZE = 700;
+const saveBtn = document.getElementById("jsSave");
 
 canvas.height = CANVAS_SIZE;
 canvas.width = CANVAS_SIZE;
@@ -71,8 +72,17 @@ function handleCanvasClick(){
     }
 }
 
+//마우스 우클릭 저장 방지
 function handleCM(event){
     event.preventDefault()
+}
+
+function handleSaveClick(){
+    const image = canvas.toDataURL("image/jpeg");
+    const link = document.createElement("a");
+    link.href = image;
+    link.download = "PaintJS[🎨]"; 
+    link.click();
 }
 
 //특정 이벤트가 발생했을 시 특정 함수를 실행할 수 있게 해주는 addEventListener 
@@ -98,6 +108,9 @@ if(mode){
     mode.addEventListener("click", handleModeClick);
 }
 
+if(saveBtn){
+    saveBtn.addEventListener("click", handleSaveClick);
+}
 //Canvas는 html 태그인데, 다른 태그와 다른점은 "context"를 갖는다는 점이다. 
 //https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D
 
